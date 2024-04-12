@@ -30,10 +30,12 @@ function displayCurrentWeather(data) {
     const tempDiv = document.getElementById('temp-div');
     const weatherInfoDiv = document.getElementById('weather-info');
     const weatherIcon = document.getElementById('weather-icon');
+    const studentID = document.getElementById('studentID');
 
     // Clear previous content
     tempDiv.innerHTML = '';
     weatherInfoDiv.innerHTML = '';
+    studentID.innerHTML = '';
 
     if (data.cod === '404') {
         weatherInfoDiv.innerHTML = `<p>${data.message}</p>`;
@@ -57,6 +59,7 @@ function displayCurrentWeather(data) {
         weatherInfoDiv.innerHTML = weatherHtml;
         weatherIcon.src = iconUrl;
         weatherIcon.alt = description;
+        studentID.textContent = "200556157";
 
         showWeatherIcon();
     }
